@@ -1,0 +1,177 @@
+﻿@using Norton.Models
+@model Ordenes
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Ordenes</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenCodigo, "Código", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrdenCodigo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrdenCodigo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenTipo, "Tipo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OrdenTipo, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownList("OrdenTipo", null, "--Seleccione--", htmlAttributes: new { @class = "form-control" })
+                @*@Html.DropDownListFor(model => model.OrdenTipo, new SelectList(ViewBag.Tipos, "ParametroDetalleId", "ParametroDetalleDescripcion"), htmlAttributes: new { @class = "form-control" })*@
+                @Html.ValidationMessageFor(model => model.OrdenTipo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenFecha, "Fecha", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrdenFecha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrdenFecha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenProveedor, "Proveedor", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("OrdenProveedor", null, "--Seleccione--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OrdenProveedor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenSubtotal, "Sub Total", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrdenSubtotal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrdenSubtotal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenIgv, "I.G.V.", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrdenIgv, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrdenIgv, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenTotal, "Total", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrdenTotal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrdenTotal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenPlazoEntrega, "Plazo Entrega", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrdenPlazoEntrega, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrdenPlazoEntrega, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenFormaPago, "Forma Pago", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("OrdenFormaPago", null, "--Seleccione--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OrdenFormaPago, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenContactoInterno, "Contacto", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("OrdenContactoInterno", null, "--Seleccione--", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OrdenContactoInterno, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrdenLugarEntrega, "Lugar Entrega", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OrdenLugarEntrega, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrdenLugarEntrega, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @Html.Partial("OrdenDetalle", Model.OrdenesDetalles)
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@Html.Partial("_CreateOrdenDetalle", new OrdenesDetalles())
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        var Orden= new Object();
+        $(document).ready(function () {
+            Orden = new Object();
+            $("#OrdenProveedor").change(function () {
+                $("#OrdenContactoInterno").empty();
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("ObtenerContactos")",
+                    dataType: "json",
+                    data: { ProveedorId: $("#OrdenProveedor").val() },
+                    success: function (contactos) {
+                        $.each(contactos, function (i, contacto) {
+                            $("#OrdenContactoInterno").append("<option value='" + contacto.value + "'>" + contacto.Text + "</option>")
+                        });
+                    },
+                    error: function () {
+                        alert("no carga");
+                    }
+                });
+                return false;
+            });
+            $("#AddDetail").click(function () {
+                event.preventDefault();
+                var detalle = {
+                    OrdenDetalleItem: $("#OrdenDetalleItem").val(),
+                    OrdenDetalleDescripcion: $("#OrdenDetalleDescripcion").val(),
+                    OrdenDetalleCuotas: $("#OrdenDetalleCuotas").val(),
+                    OrdenDetalleUnidad: $("#OrdenDetalleUnidad").val(),
+                    OrdenDetallePrecioUnitario: $("#OrdenDetallePrecioUnitario").val(),
+                    OrdenDetallePrecioTotal: $("#OrdenDetallePrecioTotal").val(),
+                };
+                if (Orden.OrdenesDetalles == undefined)
+                {
+                    Orden.OrdenesDetalles = new Array();
+                }
+                Orden.OrdenesDetalles.push(detalle);
+                CargaDatos(Orden.OrdenesDetalles);
+                return false;
+            });
+            var CargaDatos = function (datos) {
+                $("#tablaOrdenDetalle").find("tr:not(:first)").remove();
+                $.each(datos, function (index, ordenDetalle) {
+                    $("#tablaOrdenDetalle").append("<tr><td>" + ordenDetalle.OrdenDetalleItem + "</td></tr>");
+                });
+            };
+        });
+
+    </script>
+
+
+}
