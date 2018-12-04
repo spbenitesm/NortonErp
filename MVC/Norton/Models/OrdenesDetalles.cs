@@ -11,7 +11,8 @@ namespace Norton.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class OrdenesDetalles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,11 +23,17 @@ namespace Norton.Models
     
         public System.Guid OrdenDetalleId { get; set; }
         public Nullable<System.Guid> OrdenId { get; set; }
+        [DisplayName("Item")]
         public Nullable<int> OrdenDetalleItem { get; set; }
+        [DisplayName("Descripcion")]
         public string OrdenDetalleDescripcion { get; set; }
+        [DisplayName("Cuotas")]
         public Nullable<int> OrdenDetalleCuotas { get; set; }
+        [DisplayName("Unidad")]
         public string OrdenDetalleUnidad { get; set; }
+        [DisplayName("Precio Unitario")]
         public Nullable<decimal> OrdenDetallePrecioUnitario { get; set; }
+        [DisplayName("Precio Total")]
         public Nullable<decimal> OrdenDetallePrecioTotal { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
         public Nullable<System.Guid> UsuarioCreacion { get; set; }

@@ -106,7 +106,9 @@
                 @Html.ValidationMessageFor(model => model.OrdenLugarEntrega, "", new { @class = "text-danger" })
             </div>
         </div>
-        @Html.Partial("OrdenDetalle", Model.OrdenesDetalles)
+        <div id="contenedorDetalle">
+            @Html.Partial("OrdenDetalle", Model.OrdenesDetalles)
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -118,13 +120,15 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-@Html.Partial("_CreateOrdenDetalle", new OrdenesDetalles())
+<div id="edicion">
+    @Html.Partial("_CreateOrdenDetalle", new OrdenesDetalles())
+</div>
 
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script type="text/javascript">
-        var Orden= new Object();
+        var Orden = new Object();
         $(document).ready(function () {
             Orden = new Object();
             $("#OrdenProveedor").change(function () {
@@ -145,30 +149,52 @@
                 });
                 return false;
             });
-            $("#AddDetail").click(function () {
-                event.preventDefault();
-                var detalle = {
-                    OrdenDetalleItem: $("#OrdenDetalleItem").val(),
-                    OrdenDetalleDescripcion: $("#OrdenDetalleDescripcion").val(),
-                    OrdenDetalleCuotas: $("#OrdenDetalleCuotas").val(),
-                    OrdenDetalleUnidad: $("#OrdenDetalleUnidad").val(),
-                    OrdenDetallePrecioUnitario: $("#OrdenDetallePrecioUnitario").val(),
-                    OrdenDetallePrecioTotal: $("#OrdenDetallePrecioTotal").val(),
-                };
-                if (Orden.OrdenesDetalles == undefined)
-                {
-                    Orden.OrdenesDetalles = new Array();
-                }
-                Orden.OrdenesDetalles.push(detalle);
-                CargaDatos(Orden.OrdenesDetalles);
-                return false;
-            });
-            var CargaDatos = function (datos) {
-                $("#tablaOrdenDetalle").find("tr:not(:first)").remove();
-                $.each(datos, function (index, ordenDetalle) {
-                    $("#tablaOrdenDetalle").append("<tr><td>" + ordenDetalle.OrdenDetalleItem + "</td></tr>");
+            var AddDetail = function () {
+                $("#AddDetail").click(function () {
+                    event.preventDefault();
+                    var detalle = {
+                        OrdenDetalleId: $("#OrdenDetalleId").val(),
+                        OrdenDetalleItem: $("#OrdenDetalleItem").val(),
+                        OrdenDetalleDescripcion: $("#OrdenDetalleDescripcion").val(),
+                        OrdenDetalleCuotas: $("#OrdenDetalleCuotas").val(),
+                        OrdenDetalleUnidad: $("#OrdenDetalleUnidad").val(),
+                        OrdenDetallePrecioUnitario: $("#OrdenDetallePrecioUnitario").val(),
+                        OrdenDetallePrecioTotal: $("#OrdenDetallePrecioTotal").val(),
+                    };
+                    if (Orden.OrdenesDetalles == undefined) {
+                        Orden.OrdenesDetalles = new Array();
+                    }
+                    Orden.OrdenesDetalles.push(detalle);
+                    CargaDatos(detalle);
+                    return false;
                 });
             };
+            AddDetail();
+            var CargaDatos = function (datos) {
+                $.post('@Url.Action("OrdenDetalle")', datos, function (data, status, jq) {
+                    $("#contenedorDetalle").html(data);
+                }).always(function () {
+                    $("[name=editar]").click(Editar);
+                    $("[name=borrar]").click(Borrar);
+                    $("#CrearDetalle").click(Crear);
+                });
+            };
+
+            var Crear = function () {
+                $.get('@Url.Action("CrearOrdenDetalle")', function (data, status, jq) {
+                    $("#edicion").html(data);
+                }).always(AddDetail);
+            };
+            var Editar = function () {
+                $.get('@Url.Action("EditOrdenDetalle")', { id: $(this).attr("data-id") }, function (data, status, jq) {
+                    $("#edicion").html(data);
+                }).always(AddDetail);
+            };
+            var Borrar = function () {
+                $.post('@Url.Action("BorrarOrdenDetalle")', { id: $(this).attr("data-id") }, function (data, status, jq) {
+                    $("#contenedorDetalle").html(data);
+                }).always(AddDetail);
+            }
         });
 
     </script>

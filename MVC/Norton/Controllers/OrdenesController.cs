@@ -14,6 +14,21 @@ namespace Norton.Controllers
     public class OrdenesController : Controller
     {
         private nortonEntities db = new nortonEntities();
+        private Ordenes Orden
+        {
+            get
+            {
+                if (Session["Orden"] == null)
+                {
+                    Session.Add("Orden", new Ordenes());
+                }
+                return (Ordenes)Session["Orden"];
+            }
+            set
+            {
+                Session["Orden"] = value;
+            }
+        }
 
         // GET: Ordenes
         public ActionResult Index()
@@ -161,6 +176,54 @@ namespace Norton.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [HttpPost]
+        public ActionResult OrdenDetalle(OrdenesDetalles detalle)
+        {
+            if (ModelState.IsValid)
+            {
+                if (detalle.OrdenDetalleId == Guid.Empty)
+                {
+                    detalle.OrdenDetalleId = Guid.NewGuid();
+                    if (Orden.OrdenesDetalles == null)
+                    {
+                        Orden.OrdenesDetalles = new List<OrdenesDetalles>();
+                    }
+                    Orden.OrdenesDetalles.Add(detalle);
+                }
+                else
+                {
+                    var old = Orden.OrdenesDetalles.First(x => x.OrdenDetalleId == detalle.OrdenDetalleId);
+                    var index = Orden.OrdenesDetalles.ToList().IndexOf(old);
+                    var lista = Orden.OrdenesDetalles.ToList();
+                    lista.RemoveAt(index);
+                    lista.Insert(index, detalle);
+                    var nuevaLista = new HashSet<OrdenesDetalles>(lista);
+                    Orden.OrdenesDetalles = nuevaLista;
+                }
+            }
+
+            return PartialView(Orden.OrdenesDetalles);
+        }
+        public ActionResult EditOrdenDetalle(Guid id)
+        {
+            var detalle = Orden.OrdenesDetalles.FirstOrDefault(x => x.OrdenDetalleId == id);
+            return PartialView("_CreateOrdenDetalle", detalle);
+        }
+        [HttpPost]
+        public ActionResult BorrarOrdenDetalle(Guid id)
+        {
+            var detalle = Orden.OrdenesDetalles.FirstOrDefault(x => x.OrdenDetalleId == id);
+            var index = Orden.OrdenesDetalles.ToList().IndexOf(detalle);
+            var lista = Orden.OrdenesDetalles.ToList();
+            lista.RemoveAt(index);
+            var nuevaLista = new HashSet<OrdenesDetalles>(lista);
+            Orden.OrdenesDetalles = nuevaLista;
+            return PartialView("OrdenDetalle", Orden.OrdenesDetalles);
+        }
+        public ActionResult CrearOrdenDetalle()
+        {
+            return PartialView("_CreateOrdenDetalle", new OrdenesDetalles());
         }
     }
 }

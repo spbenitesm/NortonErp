@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Norton.Models.OrdenesDetalles>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <input type="button" id="CrearDetalle" value="Nuevo" class="btn btn-default"/>
 </p>
 <table class="table" id="tablaOrdenDetalle">
     <tr>
@@ -23,65 +23,36 @@
         <th>
             @Html.DisplayNameFor(model => model.OrdenDetallePrecioTotal)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaCreacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UsuarioCreacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaActualizacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UsuarioActualizacion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ordenes.OrdenCodigo)
-        </th>
-        <th></th>
+                <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrdenDetalleItem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrdenDetalleDescripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrdenDetalleCuotas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrdenDetalleUnidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrdenDetallePrecioUnitario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrdenDetallePrecioTotal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaCreacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UsuarioCreacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaActualizacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UsuarioActualizacion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ordenes.OrdenCodigo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrdenDetalleId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrdenDetalleId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrdenDetalleId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetalleItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetalleDescripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetalleCuotas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetalleUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetallePrecioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetallePrecioTotal)
+            </td>
+           
+            <td>
+                <a data-id="@item.OrdenDetalleId" name="editar">Edit</a>
+                <a data-id="@item.OrdenDetalleId" name="borrar">Borrar</a>
+            </td>
+        </tr>
+    }
 
 </table>
