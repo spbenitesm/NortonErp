@@ -147,34 +147,28 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="CreateXXX" class="btn btn-default" />
+            <input type="submit" value="Ce" class="btn btn-default" />
         </div>
     </div>
 </div>
-<div class="modal fade" tabindex="-1" role="dialog" id="ConfirmarBorrar">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Detalle de Orden</h4>
-            </div>
-            <div class="modal-body">
-               
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="GuardarDetalle">Guardar</button>
-            </div>
-        </div>
-    </div>
-</div>
+
+@Html.Partial("_confirm")
 <script type="text/javascript">
+    var id;
+    var confirmador;
     $("#EdicionDetalle").on("show.bs.modal", function (event) {
         var button = $(event.relatedTarget);
-        var datos = "ok";
+        $("#OrdenDetalleId").val('');
+        $("#OrdenDetalleItem").val('');
+        $("#OrdenDetalleDescripcion").val('');
+        $("#OrdenDetalleCuotas").val('');
+        $("#OrdenDetalleUnidad").val('');
+        $("#OrdenDetallePrecioUnitario").val('');
+        $("#OrdenDetallePrecioTotal").val('');
     });
     $("#GuardarDetalle").click(function () {
         var OrdenesDetalle = {
+            OrdenDetalleId: $("#OrdenDetalleId").val(),
             OrdenDetalleItem: $("#OrdenDetalleItem").val(),
             OrdenDetalleDescripcion: $("#OrdenDetalleDescripcion").val(),
             OrdenDetalleCuotas: $("#OrdenDetalleCuotas").val(),
@@ -185,12 +179,26 @@
         guardarDetalle(OrdenesDetalle);
         $("#EdicionDetalle").modal("hide");
     });
+
     var guardarDetalle = function (detalle) {
         $.post('@Url.Action("GuardarDetalle")', detalle, function (data, status, jq) {
             $("#divListaDetalle").html(data);
         }).always(function () {
             $("#divListaDetalle").find("[data-target=#EdicionDetalle]").click(function () {
+                id = $(this).attr("data-id");
+                $.get('@Url.Action("Edit")', { id: id }, function (data, status, jq) {
+                    $("#EdicionDetalle").find(".modal-body").html(data);
+                });
                 $("#EdicionDetalle").modal('show');
+            });
+            $("#divListaDetalle").find("[data-target=#confirmar]").click(function () {
+                id = $(this).attr("data-id");
+                confirmador = confirmar(function (id) {
+                    $.get('@Url.Action("Borrar")', { id: id }, function (data, status, jq) {
+                        $("#EdicionDetalle").find(".modal-body").html(data);
+                    });
+                });
+                confirmador.abrir();
             });
         });
     };

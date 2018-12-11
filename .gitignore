@@ -13,3 +13,5 @@
 /Pagos/Scripts
 *.user
 /Pagos/fonts
+/MVC2/NortonMvc/obj
+/MVC2/NortonMvc/bin

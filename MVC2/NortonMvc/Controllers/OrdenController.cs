@@ -44,11 +44,30 @@ namespace NortonMvc.Controllers
         {
             if (Orden.OrdenesDetalles == null)
             { Orden.OrdenesDetalles = new List<OrdenesDetalle>(); }
-            Orden.OrdenesDetalles.Add(detalle);
+            if (detalle.OrdenDetalleId==Guid.Empty)
+            {
+                detalle.OrdenDetalleId = Guid.NewGuid();
+                Orden.OrdenesDetalles.Add(detalle);
+            }
+            else
+            {
+                var old = Orden.OrdenesDetalles.FirstOrDefault(x => x.OrdenDetalleId == detalle.OrdenDetalleId);
+                var lista = Orden.OrdenesDetalles.ToList();
+                var index=lista.IndexOf(old);
+                lista.RemoveAt(index);
+                lista.Insert(index, detalle);
+                Orden.OrdenesDetalles = new HashSet<OrdenesDetalle>(lista);
+            }
+            
 
             return PartialView("_ListaDetalle", Orden.OrdenesDetalles);
         }
         public ActionResult Edit(Guid id)
+        {
+            var detalle = Orden.OrdenesDetalles.FirstOrDefault(x => x.OrdenDetalleId == id);
+            return PartialView("_CrearDetalle", detalle);
+        }
+        public ActionResult Borrar(Guid id)
         {
             var detalle = Orden.OrdenesDetalles.FirstOrDefault(x => x.OrdenDetalleId == id);
             return PartialView("_CrearDetalle", detalle);

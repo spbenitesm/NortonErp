@@ -143,6 +143,7 @@
     <Content Include="Views\Orden\Crear.cshtml" />
     <Content Include="Views\Orden\_CrearDetalle.cshtml" />
     <Content Include="Views\Orden\_ListaDetalle.cshtml" />
+    <Content Include="Views\Shared\_confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

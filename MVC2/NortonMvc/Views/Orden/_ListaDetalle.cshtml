@@ -48,9 +48,8 @@
                 @Html.DisplayFor(modelItem => item.OrdenDetallePrecioTotal)
             </td>
             <td>
-                <a data-target="#EdicionDetalle" data-id="@item.OrdenDetalleId">Edit</a> |
-                @Html.ActionLink("Details", "Details", new { id = item.OrdenDetalleId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.OrdenDetalleId })
+                <a data-target="#EdicionDetalle" data-id="@item.OrdenDetalleId">Editar</a> |
+                <a data-target="#confirmar" data-id="@item.OrdenDetalleId" data-mensaje="¿Esta seguro de eliminar el detalle: @item.OrdenDetalleDescripcion?" data-href="@Url.Action("Borrar")?id=@item.OrdenDetalleId" data-titulo="Eliminar Detalle">Eliminar</a> 
             </td>
         </tr>
     }
