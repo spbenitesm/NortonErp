@@ -147,6 +147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FacturasController.cs" />
     <Compile Include="Controllers\OrdenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -279,6 +280,11 @@
     </Content>
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Facturas\Create.cshtml" />
+    <Content Include="Views\Facturas\Delete.cshtml" />
+    <Content Include="Views\Facturas\Details.cshtml" />
+    <Content Include="Views\Facturas\Edit.cshtml" />
+    <Content Include="Views\Facturas\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

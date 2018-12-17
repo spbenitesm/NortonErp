@@ -11,7 +11,8 @@ namespace NortonMvc.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Ordene
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,19 +23,33 @@ namespace NortonMvc.Models
         }
     
         public System.Guid OrdenId { get; set; }
+        [Display(Name="Codigo")]
         public string OrdenCodigo { get; set; }
+        [Display(Name="Tipo")]
         public string OrdenTipo { get; set; }
+        [Display(Name="Fecha")]
         public Nullable<System.DateTime> OrdenFecha { get; set; }
+        [Display(Name="Proveedor")]
         public Nullable<System.Guid> OrdenProveedor { get; set; }
+        [Display(Name="Sub Total")]
         public Nullable<decimal> OrdenSubtotal { get; set; }
+        [Display(Name="I.G.V.")]
         public Nullable<decimal> OrdenIgv { get; set; }
+        [Display(Name="Total")]
         public Nullable<decimal> OrdenTotal { get; set; }
+        [Display(Name="Plazo Entrega")]
         public Nullable<System.DateTime> OrdenPlazoEntrega { get; set; }
+        [Display(Name="Forma Pago")]
         public string OrdenFormaPago { get; set; }
+        [Display(Name="Contacto Interno")]
         public Nullable<System.Guid> OrdenContactoInterno { get; set; }
+        [Display(Name="Lugar Entrega")]
         public string OrdenLugarEntrega { get; set; }
+        [Display(Name="Estado")]
         public string OrdenEstado { get; set; }
+        [Display(Name="Observación")]
         public string OrdenObservacion { get; set; }
+        [Display(Name="Motivo Rechazo")]
         public string OrdenMotivoRechazo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

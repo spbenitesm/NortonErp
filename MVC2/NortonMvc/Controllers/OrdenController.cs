@@ -25,6 +25,15 @@ namespace NortonMvc.Controllers
                 Session["Orden"] = value;
             }
         }
+        [HttpPost]
+        public ActionResult Crear(Ordene OrdenCli)
+        {
+            OrdenCli.OrdenId = Guid.NewGuid();
+            OrdenCli.OrdenesDetalles = Orden.OrdenesDetalles;
+            db.Ordenes.Add(OrdenCli);
+            db.SaveChanges();
+            return RedirectToAction("Lista");
+        }
         // GET: Orden
         public ActionResult Index()
         {
