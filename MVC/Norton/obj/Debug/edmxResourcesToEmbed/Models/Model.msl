@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="nortonModelStoreContainer" CdmEntityContainer="nortonEntities">
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="nortonModel.Empresas">
+        <MappingFragment StoreEntitySet="Empresas">
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="EmpresaCodigo" ColumnName="EmpresaCodigo" />
+          <ScalarProperty Name="EmpresaDescripcion" ColumnName="EmpresaDescripcion" />
+          <ScalarProperty Name="EmpresaEstado" ColumnName="EmpresaEstado" />
+          <ScalarProperty Name="EmpresaPorDefecto" ColumnName="EmpresaPorDefecto" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpresasCuentasBancarias">
+      <EntityTypeMapping TypeName="nortonModel.EmpresasCuentasBancarias">
+        <MappingFragment StoreEntitySet="EmpresasCuentasBancarias">
+          <ScalarProperty Name="EmpresaCuentaBancariaId" ColumnName="EmpresaCuentaBancariaId" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="EmpresaCuentaBancariaBanco" ColumnName="EmpresaCuentaBancariaBanco" />
+          <ScalarProperty Name="EmpresaCuentaBancariaNumero" ColumnName="EmpresaCuentaBancariaNumero" />
+          <ScalarProperty Name="EmpresaCuentaBancariaCCI" ColumnName="EmpresaCuentaBancariaCCI" />
+          <ScalarProperty Name="EmpresaCuentaBancariaMoneda" ColumnName="EmpresaCuentaBancariaMoneda" />
+          <ScalarProperty Name="EmpresaCuentaBancariaPorDefecto" ColumnName="EmpresaCuentaBancariaPorDefecto" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="nortonModel.Facturas">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="FacturaProyecto" ColumnName="FacturaProyecto" />
+          <ScalarProperty Name="FacturaTipo" ColumnName="FacturaTipo" />
+          <ScalarProperty Name="FacturaSerie" ColumnName="FacturaSerie" />
+          <ScalarProperty Name="FacturaNumero" ColumnName="FacturaNumero" />
+          <ScalarProperty Name="FacturaFechaEmision" ColumnName="FacturaFechaEmision" />
+          <ScalarProperty Name="FacturaFechaVencimiento" ColumnName="FacturaFechaVencimiento" />
+          <ScalarProperty Name="FacturaMoneda" ColumnName="FacturaMoneda" />
+          <ScalarProperty Name="FacturaEstado" ColumnName="FacturaEstado" />
+          <ScalarProperty Name="FacturaSubtotal" ColumnName="FacturaSubtotal" />
+          <ScalarProperty Name="FacturaIgv" ColumnName="FacturaIgv" />
+          <ScalarProperty Name="FacturaImporteTotal" ColumnName="FacturaImporteTotal" />
+          <ScalarProperty Name="FacturaFondoGarantia" ColumnName="FacturaFondoGarantia" />
+          <ScalarProperty Name="FacturaPorcentajeDetraccion" ColumnName="FacturaPorcentajeDetraccion" />
+          <ScalarProperty Name="FacturaMontoDetraccion" ColumnName="FacturaMontoDetraccion" />
+          <ScalarProperty Name="FacturaImportePagar" ColumnName="FacturaImportePagar" />
+          <ScalarProperty Name="FacturaUrl" ColumnName="FacturaUrl" />
+          <ScalarProperty Name="FacturaFechaPagoProgramada" ColumnName="FacturaFechaPagoProgramada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacturasDetalles">
+      <EntityTypeMapping TypeName="nortonModel.FacturasDetalles">
+        <MappingFragment StoreEntitySet="FacturasDetalles">
+          <ScalarProperty Name="FacturaDetalleId" ColumnName="FacturaDetalleId" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="FacturaDetalleDescripcion" ColumnName="FacturaDetalleDescripcion" />
+          <ScalarProperty Name="FacturaDetalleCantidad" ColumnName="FacturaDetalleCantidad" />
+          <ScalarProperty Name="FacturaDetallePrecioUnitario" ColumnName="FacturaDetallePrecioUnitario" />
+          <ScalarProperty Name="FacturaDetalleImporteTotal" ColumnName="FacturaDetalleImporteTotal" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacturasEstados">
+      <EntityTypeMapping TypeName="nortonModel.FacturasEstados">
+        <MappingFragment StoreEntitySet="FacturasEstados">
+          <ScalarProperty Name="FacturaEstadoId" ColumnName="FacturaEstadoId" />
+          <ScalarProperty Name="FacturaEstadoEstado" ColumnName="FacturaEstadoEstado" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="FacturaEstadoFecha" ColumnName="FacturaEstadoFecha" />
+          <ScalarProperty Name="FacturaEstadoUsuario" ColumnName="FacturaEstadoUsuario" />
+          <ScalarProperty Name="FacturaEstadoMotivosRechazo" ColumnName="FacturaEstadoMotivosRechazo" />
+          <ScalarProperty Name="FacturaEstadoObservaciones" ColumnName="FacturaEstadoObservaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacturasGuiasRemision">
+      <EntityTypeMapping TypeName="nortonModel.FacturasGuiasRemision">
+        <MappingFragment StoreEntitySet="FacturasGuiasRemision">
+          <ScalarProperty Name="FacturaGuiaRemisionId" ColumnName="FacturaGuiaRemisionId" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="FacturaGuiaRemisionSerie" ColumnName="FacturaGuiaRemisionSerie" />
+          <ScalarProperty Name="FacturaGuiaRemisionNumero" ColumnName="FacturaGuiaRemisionNumero" />
+          <ScalarProperty Name="FacturaGuiaRemisionFechaEmision" ColumnName="FacturaGuiaRemisionFechaEmision" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacturasOrdenes">
+      <EntityTypeMapping TypeName="nortonModel.FacturasOrdenes">
+        <MappingFragment StoreEntitySet="FacturasOrdenes">
+          <ScalarProperty Name="FacturaOrdenId" ColumnName="FacturaOrdenId" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="OrdenId" ColumnName="OrdenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacturasPagos">
+      <EntityTypeMapping TypeName="nortonModel.FacturasPagos">
+        <MappingFragment StoreEntitySet="FacturasPagos">
+          <ScalarProperty Name="FacturaPagoId" ColumnName="FacturaPagoId" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="PagoId" ColumnName="PagoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monedas">
+      <EntityTypeMapping TypeName="nortonModel.Monedas">
+        <MappingFragment StoreEntitySet="Monedas">
+          <ScalarProperty Name="MonedaId" ColumnName="MonedaId" />
+          <ScalarProperty Name="MonedaCodigo" ColumnName="MonedaCodigo" />
+          <ScalarProperty Name="MonedaDescripcion" ColumnName="MonedaDescripcion" />
+          <ScalarProperty Name="MonedaBase" ColumnName="MonedaBase" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordenes">
+      <EntityTypeMapping TypeName="nortonModel.Ordenes">
+        <MappingFragment StoreEntitySet="Ordenes">
+          <ScalarProperty Name="OrdenId" ColumnName="OrdenId" />
+          <ScalarProperty Name="OrdenCodigo" ColumnName="OrdenCodigo" />
+          <ScalarProperty Name="OrdenTipo" ColumnName="OrdenTipo" />
+          <ScalarProperty Name="OrdenFecha" ColumnName="OrdenFecha" />
+          <ScalarProperty Name="OrdenProveedor" ColumnName="OrdenProveedor" />
+          <ScalarProperty Name="OrdenSubtotal" ColumnName="OrdenSubtotal" />
+          <ScalarProperty Name="OrdenIgv" ColumnName="OrdenIgv" />
+          <ScalarProperty Name="OrdenTotal" ColumnName="OrdenTotal" />
+          <ScalarProperty Name="OrdenPlazoEntrega" ColumnName="OrdenPlazoEntrega" />
+          <ScalarProperty Name="OrdenFormaPago" ColumnName="OrdenFormaPago" />
+          <ScalarProperty Name="OrdenContactoInterno" ColumnName="OrdenContactoInterno" />
+          <ScalarProperty Name="OrdenLugarEntrega" ColumnName="OrdenLugarEntrega" />
+          <ScalarProperty Name="OrdenEstado" ColumnName="OrdenEstado" />
+          <ScalarProperty Name="OrdenObservacion" ColumnName="OrdenObservacion" />
+          <ScalarProperty Name="OrdenMotivoRechazo" ColumnName="OrdenMotivoRechazo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenesDetalles">
+      <EntityTypeMapping TypeName="nortonModel.OrdenesDetalles">
+        <MappingFragment StoreEntitySet="OrdenesDetalles">
+          <ScalarProperty Name="OrdenDetalleId" ColumnName="OrdenDetalleId" />
+          <ScalarProperty Name="OrdenId" ColumnName="OrdenId" />
+          <ScalarProperty Name="OrdenDetalleItem" ColumnName="OrdenDetalleItem" />
+          <ScalarProperty Name="OrdenDetalleDescripcion" ColumnName="OrdenDetalleDescripcion" />
+          <ScalarProperty Name="OrdenDetalleCuotas" ColumnName="OrdenDetalleCuotas" />
+          <ScalarProperty Name="OrdenDetalleUnidad" ColumnName="OrdenDetalleUnidad" />
+          <ScalarProperty Name="OrdenDetallePrecioUnitario" ColumnName="OrdenDetallePrecioUnitario" />
+          <ScalarProperty Name="OrdenDetallePrecioTotal" ColumnName="OrdenDetallePrecioTotal" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrdenesPartidas">
+      <EntityTypeMapping TypeName="nortonModel.OrdenesPartidas">
+        <MappingFragment StoreEntitySet="OrdenesPartidas">
+          <ScalarProperty Name="OrdenPartidaId" ColumnName="OrdenPartidaId" />
+          <ScalarProperty Name="OrdenId" ColumnName="OrdenId" />
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="PresupuestoItemId" ColumnName="PresupuestoItemId" />
+          <ScalarProperty Name="OrdenDetalleId" ColumnName="OrdenDetalleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paginas">
+      <EntityTypeMapping TypeName="nortonModel.Paginas">
+        <MappingFragment StoreEntitySet="Paginas">
+          <ScalarProperty Name="PaginaId" ColumnName="PaginaId" />
+          <ScalarProperty Name="PaginaCodigo" ColumnName="PaginaCodigo" />
+          <ScalarProperty Name="PaginaNombre" ColumnName="PaginaNombre" />
+          <ScalarProperty Name="PaginaDescripcion" ColumnName="PaginaDescripcion" />
+          <ScalarProperty Name="PaginaUrl" ColumnName="PaginaUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagos">
+      <EntityTypeMapping TypeName="nortonModel.Pagos">
+        <MappingFragment StoreEntitySet="Pagos">
+          <ScalarProperty Name="PagoId" ColumnName="PagoId" />
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="PagoCuentaOrigen" ColumnName="PagoCuentaOrigen" />
+          <ScalarProperty Name="PagoCuentaDestino" ColumnName="PagoCuentaDestino" />
+          <ScalarProperty Name="PagoFecha" ColumnName="PagoFecha" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parametros">
+      <EntityTypeMapping TypeName="nortonModel.Parametros">
+        <MappingFragment StoreEntitySet="Parametros">
+          <ScalarProperty Name="ParametroId" ColumnName="ParametroId" />
+          <ScalarProperty Name="ParametroCodigo" ColumnName="ParametroCodigo" />
+          <ScalarProperty Name="ParametroDescripcion" ColumnName="ParametroDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParametrosDetalle">
+      <EntityTypeMapping TypeName="nortonModel.ParametrosDetalle">
+        <MappingFragment StoreEntitySet="ParametrosDetalle">
+          <ScalarProperty Name="ParametroDetalleId" ColumnName="ParametroDetalleId" />
+          <ScalarProperty Name="ParametroDetalleCodigo" ColumnName="ParametroDetalleCodigo" />
+          <ScalarProperty Name="ParametroDetalleDescripcion" ColumnName="ParametroDetalleDescripcion" />
+          <ScalarProperty Name="ParametroId" ColumnName="ParametroId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partidas">
+      <EntityTypeMapping TypeName="nortonModel.Partidas">
+        <MappingFragment StoreEntitySet="Partidas">
+          <ScalarProperty Name="PartidaId" ColumnName="PartidaId" />
+          <ScalarProperty Name="PartidaCodigo" ColumnName="PartidaCodigo" />
+          <ScalarProperty Name="PartidaNaturaleza" ColumnName="PartidaNaturaleza" />
+          <ScalarProperty Name="PartidaUnidad" ColumnName="PartidaUnidad" />
+          <ScalarProperty Name="PartidaResumen" ColumnName="PartidaResumen" />
+          <ScalarProperty Name="PadrePartidaId" ColumnName="PadrePartidaId" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Presupuestos">
+      <EntityTypeMapping TypeName="nortonModel.Presupuestos">
+        <MappingFragment StoreEntitySet="Presupuestos">
+          <ScalarProperty Name="PresupuestoId" ColumnName="PresupuestoId" />
+          <ScalarProperty Name="PresupuestoFecha" ColumnName="PresupuestoFecha" />
+          <ScalarProperty Name="PresupuestoOrigen" ColumnName="PresupuestoOrigen" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PresupuestosItems">
+      <EntityTypeMapping TypeName="nortonModel.PresupuestosItems">
+        <MappingFragment StoreEntitySet="PresupuestosItems">
+          <ScalarProperty Name="PresupuestoItemId" ColumnName="PresupuestoItemId" />
+          <ScalarProperty Name="PresupuestoId" ColumnName="PresupuestoId" />
+          <ScalarProperty Name="PartidaId" ColumnName="PartidaId" />
+          <ScalarProperty Name="PadrePartidaId" ColumnName="PadrePartidaId" />
+          <ScalarProperty Name="PresupuestoItemFecha" ColumnName="PresupuestoItemFecha" />
+          <ScalarProperty Name="PresupuestoItemCodigo" ColumnName="PresupuestoItemCodigo" />
+          <ScalarProperty Name="PresupuestoItemNaturaleza" ColumnName="PresupuestoItemNaturaleza" />
+          <ScalarProperty Name="PresupuestoItemUnidad" ColumnName="PresupuestoItemUnidad" />
+          <ScalarProperty Name="PresupuestoItemResumen" ColumnName="PresupuestoItemResumen" />
+          <ScalarProperty Name="PresupuestoItemCantidad" ColumnName="PresupuestoItemCantidad" />
+          <ScalarProperty Name="PresupuestoItemPrecio" ColumnName="PresupuestoItemPrecio" />
+          <ScalarProperty Name="PresupuestoItemImporte" ColumnName="PresupuestoItemImporte" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PresupuestosItemsLogs">
+      <EntityTypeMapping TypeName="nortonModel.PresupuestosItemsLogs">
+        <MappingFragment StoreEntitySet="PresupuestosItemsLogs">
+          <ScalarProperty Name="PresupuestoItemLogId" ColumnName="PresupuestoItemLogId" />
+          <ScalarProperty Name="PresupuestoItemId" ColumnName="PresupuestoItemId" />
+          <ScalarProperty Name="PresupuestoItemLogFecha" ColumnName="PresupuestoItemLogFecha" />
+          <ScalarProperty Name="PresupuestoItemLogAccion" ColumnName="PresupuestoItemLogAccion" />
+          <ScalarProperty Name="PresupuestoItemCodigo" ColumnName="PresupuestoItemCodigo" />
+          <ScalarProperty Name="PresupuestoItemNaturaleza" ColumnName="PresupuestoItemNaturaleza" />
+          <ScalarProperty Name="PresupuestoItemUnidad" ColumnName="PresupuestoItemUnidad" />
+          <ScalarProperty Name="PresupuestoItemResumen" ColumnName="PresupuestoItemResumen" />
+          <ScalarProperty Name="PresupuestoItemCantidad" ColumnName="PresupuestoItemCantidad" />
+          <ScalarProperty Name="PresupuestoItemPrecio" ColumnName="PresupuestoItemPrecio" />
+          <ScalarProperty Name="PresupuestoItemImporte" ColumnName="PresupuestoItemImporte" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="nortonModel.Proveedores">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="ProveedorRuc" ColumnName="ProveedorRuc" />
+          <ScalarProperty Name="ProveedorEmail" ColumnName="ProveedorEmail" />
+          <ScalarProperty Name="ProveedorRazonSocial" ColumnName="ProveedorRazonSocial" />
+          <ScalarProperty Name="ProveedorPassword" ColumnName="ProveedorPassword" />
+          <ScalarProperty Name="ProveedorTipo" ColumnName="ProveedorTipo" />
+          <ScalarProperty Name="ProveedorDireccionFiscal" ColumnName="ProveedorDireccionFiscal" />
+          <ScalarProperty Name="ProveedorPlazoPago" ColumnName="ProveedorPlazoPago" />
+          <ScalarProperty Name="ProveedorEstado" ColumnName="ProveedorEstado" />
+          <ScalarProperty Name="ProveedorTipoDetraccion" ColumnName="ProveedorTipoDetraccion" />
+          <ScalarProperty Name="ProveedorPorcentajeDetraccion" ColumnName="ProveedorPorcentajeDetraccion" />
+          <ScalarProperty Name="ProveedorCuentaDetraccion" ColumnName="ProveedorCuentaDetraccion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioValidacion" ColumnName="UsuarioValidacion" />
+          <ScalarProperty Name="TipoProveedorId" ColumnName="TipoProveedorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProveedoresContactos">
+      <EntityTypeMapping TypeName="nortonModel.ProveedoresContactos">
+        <MappingFragment StoreEntitySet="ProveedoresContactos">
+          <ScalarProperty Name="ProveedorContactoId" ColumnName="ProveedorContactoId" />
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="ProveedorContactoTipo" ColumnName="ProveedorContactoTipo" />
+          <ScalarProperty Name="ProveedorContactoNombres" ColumnName="ProveedorContactoNombres" />
+          <ScalarProperty Name="ProveedorContactoApellidos" ColumnName="ProveedorContactoApellidos" />
+          <ScalarProperty Name="ProveedorContactoEmail" ColumnName="ProveedorContactoEmail" />
+          <ScalarProperty Name="ProveedorContactoTelefono" ColumnName="ProveedorContactoTelefono" />
+          <ScalarProperty Name="ProveedorContactoCelular" ColumnName="ProveedorContactoCelular" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProveedoresCuentasBancarias">
+      <EntityTypeMapping TypeName="nortonModel.ProveedoresCuentasBancarias">
+        <MappingFragment StoreEntitySet="ProveedoresCuentasBancarias">
+          <ScalarProperty Name="ProveedorCuentaBancariaId" ColumnName="ProveedorCuentaBancariaId" />
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="ProveedorCuentaBancariaBanco" ColumnName="ProveedorCuentaBancariaBanco" />
+          <ScalarProperty Name="ProveedorCuentaBancariaNumero" ColumnName="ProveedorCuentaBancariaNumero" />
+          <ScalarProperty Name="ProveedorCuentaBancariaCCI" ColumnName="ProveedorCuentaBancariaCCI" />
+          <ScalarProperty Name="ProveedorCuantaBancariaMoneda" ColumnName="ProveedorCuantaBancariaMoneda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proyectos">
+      <EntityTypeMapping TypeName="nortonModel.Proyectos">
+        <MappingFragment StoreEntitySet="Proyectos">
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="ProyectoCodigo" ColumnName="ProyectoCodigo" />
+          <ScalarProperty Name="ProyectoNombre" ColumnName="ProyectoNombre" />
+          <ScalarProperty Name="ProyectoMoneda" ColumnName="ProyectoMoneda" />
+          <ScalarProperty Name="ProyectoUtilidadContratada" ColumnName="ProyectoUtilidadContratada" />
+          <ScalarProperty Name="ProyectoUtilidad" ColumnName="ProyectoUtilidad" />
+          <ScalarProperty Name="ProyectoGastosGenerales" ColumnName="ProyectoGastosGenerales" />
+          <ScalarProperty Name="ProyectoIgv" ColumnName="ProyectoIgv" />
+          <ScalarProperty Name="ProyectoMontoTotal" ColumnName="ProyectoMontoTotal" />
+          <ScalarProperty Name="ProyectoEstado" ColumnName="ProyectoEstado" />
+          <ScalarProperty Name="ProyectoFechaInicio" ColumnName="ProyectoFechaInicio" />
+          <ScalarProperty Name="ProyectoFechaFin" ColumnName="ProyectoFechaFin" />
+          <ScalarProperty Name="ProyectoEmpresa" ColumnName="ProyectoEmpresa" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProyectosPresupuestos">
+      <EntityTypeMapping TypeName="nortonModel.ProyectosPresupuestos">
+        <MappingFragment StoreEntitySet="ProyectosPresupuestos">
+          <ScalarProperty Name="ProyectoPresupuestoId" ColumnName="ProyectoPresupuestoId" />
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="PresupuestoId" ColumnName="PresupuestoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProyectosResponsables">
+      <EntityTypeMapping TypeName="nortonModel.ProyectosResponsables">
+        <MappingFragment StoreEntitySet="ProyectosResponsables">
+          <ScalarProperty Name="ProyectoResponsableId" ColumnName="ProyectoResponsableId" />
+          <ScalarProperty Name="ProyectoId" ColumnName="ProyectoId" />
+          <ScalarProperty Name="ResponsableId" ColumnName="ResponsableId" />
+          <ScalarProperty Name="ProyectoResponsableTipo" ColumnName="ProyectoResponsableTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="nortonModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="RolCodigo" ColumnName="RolCodigo" />
+          <ScalarProperty Name="RolDescripcion" ColumnName="RolDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposdeCambio">
+      <EntityTypeMapping TypeName="nortonModel.TiposdeCambio">
+        <MappingFragment StoreEntitySet="TiposdeCambio">
+          <ScalarProperty Name="TipoCambioId" ColumnName="TipoCambioId" />
+          <ScalarProperty Name="MonedaId" ColumnName="MonedaId" />
+          <ScalarProperty Name="TipoCambioFecha" ColumnName="TipoCambioFecha" />
+          <ScalarProperty Name="TipoCambioValor" ColumnName="TipoCambioValor" />
+          <ScalarProperty Name="TipoCambioOrigen" ColumnName="TipoCambioOrigen" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposDetracciones">
+      <EntityTypeMapping TypeName="nortonModel.TiposDetracciones">
+        <MappingFragment StoreEntitySet="TiposDetracciones">
+          <ScalarProperty Name="TipoDetraccionId" ColumnName="TipoDetraccionId" />
+          <ScalarProperty Name="TipoDetraccionCodigo" ColumnName="TipoDetraccionCodigo" />
+          <ScalarProperty Name="TipoDetraccionDescripcion" ColumnName="TipoDetraccionDescripcion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposFacturas">
+      <EntityTypeMapping TypeName="nortonModel.TiposFacturas">
+        <MappingFragment StoreEntitySet="TiposFacturas">
+          <ScalarProperty Name="TipoFacturaId" ColumnName="TipoFacturaId" />
+          <ScalarProperty Name="TipoFacturaCodigo" ColumnName="TipoFacturaCodigo" />
+          <ScalarProperty Name="TipoFacturaDescripcion" ColumnName="TipoFacturaDescripcion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposProveedores">
+      <EntityTypeMapping TypeName="nortonModel.TiposProveedores">
+        <MappingFragment StoreEntitySet="TiposProveedores">
+          <ScalarProperty Name="TipoProveedorId" ColumnName="TipoProveedorId" />
+          <ScalarProperty Name="TipoProveedorCodigo" ColumnName="TipoProveedorCodigo" />
+          <ScalarProperty Name="TipoProveedorDescripcion" ColumnName="TipoProveedorDescripcion" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="FechaActualizacion" ColumnName="FechaActualizacion" />
+          <ScalarProperty Name="UsuarioActualizacion" ColumnName="UsuarioActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="nortonModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="UsuarioCodigo" ColumnName="UsuarioCodigo" />
+          <ScalarProperty Name="UsuarioNombres" ColumnName="UsuarioNombres" />
+          <ScalarProperty Name="UsuarioApellidos" ColumnName="UsuarioApellidos" />
+          <ScalarProperty Name="UsuarioEmail" ColumnName="UsuarioEmail" />
+          <ScalarProperty Name="UsuarioUsername" ColumnName="UsuarioUsername" />
+          <ScalarProperty Name="UsuarioPassword" ColumnName="UsuarioPassword" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolesPaginas">
+      <EntityTypeMapping TypeName="nortonModel.RolesPaginas">
+        <MappingFragment StoreEntitySet="RolesPaginas">
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="PaginaId" ColumnName="PaginaId" />
+          <ScalarProperty Name="RolId" ColumnName="RolId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ProveedoresFacturas" TypeName="nortonModel.ProveedoresFacturas" StoreEntitySet="ProveedoresFacturas">
+      <EndProperty Name="Proveedores">
+        <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+      </EndProperty>
+      <EndProperty Name="Facturas">
+        <ScalarProperty Name="FacturaId" ColumnName="FacturarId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

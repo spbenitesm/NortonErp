@@ -1,0 +1,17 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/config/applicationhost.config
+*.suo
+/Entidades/bin/Debug
+/Entidades/obj/Debug
+/packages
+/Pagos/bin
+/Pagos/Content
+/Pagos/obj/Debug
+/Pagos/Scripts
+*.user
+/Pagos/fonts
+/MVC2/NortonMvc/obj
+/MVC2/NortonMvc/bin

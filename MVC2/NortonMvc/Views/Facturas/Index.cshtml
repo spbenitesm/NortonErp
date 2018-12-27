@@ -1,0 +1,130 @@
+﻿@model IEnumerable<NortonMvc.Models.Factura>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaProyecto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaSerie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaNumero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaFechaEmision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaFechaVencimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaMoneda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaEstado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaSubtotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaIgv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaImporteTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaFondoGarantia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaPorcentajeDetraccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaMontoDetraccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaImportePagar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaUrl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FacturaFechaPagoProgramada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TiposFactura.TipoFacturaCodigo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaProyecto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaSerie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaNumero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaFechaEmision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaFechaVencimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaMoneda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaSubtotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaIgv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaImporteTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaFondoGarantia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaPorcentajeDetraccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaMontoDetraccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaImportePagar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaUrl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FacturaFechaPagoProgramada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TiposFactura.TipoFacturaCodigo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FacturaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FacturaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FacturaId })
+        </td>
+    </tr>
+}
+
+</table>

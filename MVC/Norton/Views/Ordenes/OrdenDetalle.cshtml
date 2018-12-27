@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Norton.Models.OrdenesDetalles>
+
+<p>
+    <input type="button" id="CrearDetalle" value="Nuevo" class="btn btn-default"/>
+</p>
+<table class="table" id="tablaOrdenDetalle">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrdenDetalleItem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrdenDetalleDescripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrdenDetalleCuotas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrdenDetalleUnidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrdenDetallePrecioUnitario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrdenDetallePrecioTotal)
+        </th>
+                <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetalleItem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetalleDescripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetalleCuotas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetalleUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetallePrecioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrdenDetallePrecioTotal)
+            </td>
+           
+            <td>
+                <a data-id="@item.OrdenDetalleId" name="editar">Edit</a>
+                <a data-id="@item.OrdenDetalleId" name="borrar">Borrar</a>
+            </td>
+        </tr>
+    }
+
+</table>
